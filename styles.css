@@ -18,7 +18,7 @@
 
 html {
     font-size: 16px;
-    scroll-behavior: smooth; /* Para que el scroll al hacer clic en categorías sea suave */
+    scroll-behavior: smooth; 
 }
 
 body {
@@ -42,33 +42,42 @@ img {
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-.main-header h1 {
+/* MODIFICACIÓN: Estilos para el nuevo logo */
+.header-logo {
+    max-width: 250px; /* Ajusta el tamaño máximo del logo */
+    margin: 0 auto 0.5rem; /* Centra el logo y añade un margen inferior */
+}
+
+.main-header p {
     font-family: var(--font-headings);
-    font-size: 2.5rem;
+    font-size: 1.2rem;
+    color: var(--secondary-color);
     letter-spacing: 1px;
 }
 
 /* --- CONTENEDOR PRINCIPAL DEL MENÚ --- */
 .menu-container {
     padding: 0 1rem;
-    max-width: 1200px; /* Ancho máximo para pantallas grandes */
+    max-width: 1200px; 
     margin: 0 auto;
 }
+
+/* ... (el resto de los estilos permanecen exactamente iguales) ... */
 
 /* --- NAVEGACIÓN DE CATEGORÍAS --- */
 .menu-categories {
     display: flex;
-    overflow-x: auto; /* Permite scroll horizontal en móvil si hay muchas categorías */
+    overflow-x: auto; 
     padding: 1rem 0;
     background-color: var(--background-color);
-    position: sticky; /* Se queda fijo en la parte superior al hacer scroll */
+    position: sticky; 
     top: 0;
     z-index: 10;
     border-bottom: 2px solid #ddd;
 }
 
 .category-link {
-    white-space: nowrap; /* Evita que el texto de los botones se rompa */
+    white-space: nowrap; 
     padding: 0.5rem 1rem;
     margin: 0 0.5rem;
     text-decoration: none;
@@ -108,19 +117,19 @@ img {
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     margin-bottom: 1rem;
-    overflow: hidden; /* Asegura que el border-radius se aplique a la imagen */
+    overflow: hidden; 
 }
 
 .menu-item img {
     width: 80px;
     height: 80px;
-    object-fit: cover; /* Evita que la imagen se deforme */
+    object-fit: cover; 
     flex-shrink: 0;
 }
 
 .item-details {
     padding: 0.8rem;
-    flex-grow: 1; /* Ocupa el espacio restante */
+    flex-grow: 1; 
 }
 
 .item-details h3 {
@@ -154,51 +163,48 @@ img {
 
 
 /* --- MEDIA QUERIES PARA RESPONSIVIDAD --- */
-
-/* Estilos para Tablets (a partir de 768px) */
 @media (min-width: 768px) {
     html {
         font-size: 17px;
     }
 
-    .main-header h1 {
-        font-size: 3.5rem;
+    /* MODIFICACIÓN: Aumentar el tamaño del logo en tablets y escritorio */
+    .header-logo {
+        max-width: 300px;
     }
 
-    /* Centrar la navegación de categorías en pantallas más grandes */
+    .main-header p {
+        font-size: 1.5rem;
+    }
+
     .menu-categories {
         justify-content: center;
     }
 
-    /* Usar un layout de cuadrícula para los productos */
     .menu-category {
         display: grid;
-        grid-template-columns: 1fr 1fr; /* Dos columnas */
-        gap: 1.5rem; /* Espacio entre las tarjetas */
+        grid-template-columns: 1fr 1fr; 
+        gap: 1.5rem; 
         grid-template-areas:
             "heading heading"
             "item item";
     }
 
     .menu-category h2 {
-        grid-area: heading; /* El título ocupa todo el ancho */
+        grid-area: heading; 
     }
     
     .menu-item {
-      margin-bottom: 0; /* Quitamos el margen inferior porque ahora lo controla el 'gap' */
+      margin-bottom: 0; 
     }
 }
 
-/* Estilos para Escritorio (a partir de 1024px) */
 @media (min-width: 1024px) {
     .menu-category {
-        /* Mantenemos dos columnas para no hacer las tarjetas demasiado anchas,
-           pero podríamos cambiar a 3 si los elementos son más compactos. */
         grid-template-columns: 1fr 1fr;
     }
 
     .menu-item {
-        /* Animación sutil al pasar el cursor */
         transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     }
 
