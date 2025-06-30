@@ -1,0 +1,209 @@
+/* --- ESTILOS GLOBALES Y VARIABLES --- */
+:root {
+    --primary-color: #E53935; /* Un rojo atractivo para comida rápida */
+    --secondary-color: #FFC107; /* Un amarillo para acentos */
+    --text-color: #333333;
+    --background-color: #F5F5F5;
+    --card-background: #FFFFFF;
+    --font-headings: 'Oswald', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+/* --- RESET BÁSICO Y CONFIGURACIÓN MOBILE-FIRST --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth; /* Para que el scroll al hacer clic en categorías sea suave */
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* --- HEADER --- */
+.main-header {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.main-header h1 {
+    font-family: var(--font-headings);
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+}
+
+/* --- CONTENEDOR PRINCIPAL DEL MENÚ --- */
+.menu-container {
+    padding: 0 1rem;
+    max-width: 1200px; /* Ancho máximo para pantallas grandes */
+    margin: 0 auto;
+}
+
+/* --- NAVEGACIÓN DE CATEGORÍAS --- */
+.menu-categories {
+    display: flex;
+    overflow-x: auto; /* Permite scroll horizontal en móvil si hay muchas categorías */
+    padding: 1rem 0;
+    background-color: var(--background-color);
+    position: sticky; /* Se queda fijo en la parte superior al hacer scroll */
+    top: 0;
+    z-index: 10;
+    border-bottom: 2px solid #ddd;
+}
+
+.category-link {
+    white-space: nowrap; /* Evita que el texto de los botones se rompa */
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    text-decoration: none;
+    background-color: var(--card-background);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.category-link:hover, .category-link:focus {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* --- SECCIONES DE CATEGORÍAS Y TÍTULOS --- */
+.menu-category {
+    padding-top: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.menu-category h2 {
+    font-family: var(--font-headings);
+    font-size: 2rem;
+    color: var(--text-color);
+    border-bottom: 3px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* --- TARJETA DE PRODUCTO (MENU ITEM) --- */
+.menu-item {
+    display: flex;
+    align-items: center;
+    background-color: var(--card-background);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+    overflow: hidden; /* Asegura que el border-radius se aplique a la imagen */
+}
+
+.menu-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover; /* Evita que la imagen se deforme */
+    flex-shrink: 0;
+}
+
+.item-details {
+    padding: 0.8rem;
+    flex-grow: 1; /* Ocupa el espacio restante */
+}
+
+.item-details h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+    color: var(--text-color);
+}
+
+.item-description {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.item-price {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    padding: 1rem;
+    flex-shrink: 0;
+}
+
+/* --- FOOTER --- */
+.main-footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: #333;
+    color: #f5f5f5;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+
+/* --- MEDIA QUERIES PARA RESPONSIVIDAD --- */
+
+/* Estilos para Tablets (a partir de 768px) */
+@media (min-width: 768px) {
+    html {
+        font-size: 17px;
+    }
+
+    .main-header h1 {
+        font-size: 3.5rem;
+    }
+
+    /* Centrar la navegación de categorías en pantallas más grandes */
+    .menu-categories {
+        justify-content: center;
+    }
+
+    /* Usar un layout de cuadrícula para los productos */
+    .menu-category {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Dos columnas */
+        gap: 1.5rem; /* Espacio entre las tarjetas */
+        grid-template-areas:
+            "heading heading"
+            "item item";
+    }
+
+    .menu-category h2 {
+        grid-area: heading; /* El título ocupa todo el ancho */
+    }
+    
+    .menu-item {
+      margin-bottom: 0; /* Quitamos el margen inferior porque ahora lo controla el 'gap' */
+    }
+}
+
+/* Estilos para Escritorio (a partir de 1024px) */
+@media (min-width: 1024px) {
+    .menu-category {
+        /* Mantenemos dos columnas para no hacer las tarjetas demasiado anchas,
+           pero podríamos cambiar a 3 si los elementos son más compactos. */
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .menu-item {
+        /* Animación sutil al pasar el cursor */
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+
+    .menu-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+}
