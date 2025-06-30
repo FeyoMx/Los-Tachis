@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Digital - Los Tachis</title>
+    <meta name="description" content="Descubre nuestro delicioso menú de comida rápida en Los Tachis. Hamburguesas, papas, bebidas y más.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald:wght@500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <h1>Los Tachis</h1>
+        <p>Menú de Comida Rápida</p>
+    </header>
+
+    <main class="menu-container">
+        <nav class="menu-categories">
+            <a href="#hamburguesas" class="category-link">Hamburguesas</a>
+            <a href="#complementos" class="category-link">Complementos</a>
+            <a href="#bebidas" class="category-link">Bebidas</a>
+            <a href="#postres" class="category-link">Postres</a>
+        </nav>
+
+        <section id="hamburguesas" class="menu-category">
+            <h2>Hamburguesas</h2>
+            <article class="menu-item">
+                <img src="https://via.placeholder.com/100x100.png?text=Tachis+Clásica" alt="Hamburguesa Tachis Clásica">
+                <div class="item-details">
+                    <h3>Tachis Clásica</h3>
+                    <p class="item-description">Carne de res, queso americano, lechuga, tomate y nuestra salsa secreta.</p>
+                </div>
+                <p class="item-price">$120.00</p>
+            </article>
+            <article class="menu-item">
+                <img src="https://via.placeholder.com/100x100.png?text=Doble+Queso" alt="Hamburguesa Doble con Queso">
+                <div class="item-details">
+                    <h3>Doble con Queso</h3>
+                    <p class="item-description">Doble carne de res, doble queso americano, pepinillos y cebolla.</p>
+                </div>
+                <p class="item-price">$150.00</p>
+            </article>
+        </section>
+
+        <section id="complementos" class="menu-category">
+            <h2>Papas y Complementos</h2>
+            <article class="menu-item">
+                <img src="https://via.placeholder.com/100x100.png?text=Papas+Fritas" alt="Papas a la francesa">
+                <div class="item-details">
+                    <h3>Papas a la Francesa</h3>
+                    <p class="item-description">Papas crujientes y doradas, sazonadas a la perfección.</p>
+                </div>
+                <p class="item-price">$50.00</p>
+            </article>
+             <article class="menu-item">
+                <img src="https://via.placeholder.com/100x100.png?text=Aros+Cebolla" alt="Aros de Cebolla">
+                <div class="item-details">
+                    <h3>Aros de Cebolla</h3>
+                    <p class="item-description">Aros de cebolla empanizados y fritos, con aderezo ranch.</p>
+                </div>
+                <p class="item-price">$60.00</p>
+            </article>
+        </section>
+
+        <section id="bebidas" class="menu-category">
+            <h2>Bebidas</h2>
+            <article class="menu-item">
+                <img src="https://via.placeholder.com/100x100.png?text=Refresco" alt="Refresco de lata">
+                <div class="item-details">
+                    <h3>Refresco</h3>
+                    <p class="item-description">Lata de 355ml. Coca-Cola, Sprite, Fanta.</p>
+                </div>
+                <p class="item-price">$30.00</p>
+            </article>
+            <article class="menu-item">
+                <img src="https://via.placeholder.com/100x100.png?text=Malteada" alt="Malteada de fresa">
+                 <div class="item-details">
+                    <h3>Malteada</h3>
+                    <p class="item-description">Elige tu sabor favorito: Fresa, Vainilla o Chocolate.</p>
+                </div>
+                <p class="item-price">$70.00</p>
+            </article>
+        </section>
+        
+        <section id="postres" class="menu-category">
+            <h2>Postres</h2>
+            <article class="menu-item">
+                <img src="https://via.placeholder.com/100x100.png?text=Pastel" alt="Pastel de chocolate">
+                 <div class="item-details">
+                    <h3>Pastel de Chocolate</h3>
+                    <p class="item-description">Una rebanada de nuestro delicioso y húmedo pastel de chocolate.</p>
+                </div>
+                <p class="item-price">$65.00</p>
+            </article>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 Los Tachis. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
